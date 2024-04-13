@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Form from "./Form";
 import axios from 'axios';
 import Footer from "components/Footer/index.jsx";
+import ReactPixel from 'react-facebook-pixel';
+
 
 export default function FormPage() {
     const [name, setName] = useState('');
@@ -18,6 +20,7 @@ export default function FormPage() {
                 chat_id: '-1002107069189',
             });
             console.log(response.data);
+            ReactPixel.track('Lead');
         } catch (error) {
             console.error(error);
         }
