@@ -14,7 +14,7 @@ export default function FormPage() {
         setName('');
         setPhone('');
         try {
-            const text = `Новая заявка по ВНЖ(1)(3)!\nИмя: ${name}\nТелефон: ${phone}\nНик телеграма: ${nick}`;
+            const text = `@eci889(1)(3)!\nИмя: ${name}\nТелефон: ${phone}\nНик телеграма: ${nick}`;
             const response = await axios.post('https://api.telegram.org/bot6806809280:AAFqNvMpRw2ZsyyuFIpzoLd331rvHR1y4mQ/sendMessage', {
                 text,
                 chat_id: '-1002107069189',

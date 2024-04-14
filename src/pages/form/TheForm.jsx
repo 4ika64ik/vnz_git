@@ -15,7 +15,7 @@ export default function TheForm({ children }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const text = `Новая заявка по ВНЖ(1)!\nИмя: ${name}\nТелефон: ${phone}\nНик телеграма: ${nick}`;
+            const text = `@eci889!\nИмя: ${name}\nТелефон: ${phone}\nНик телеграма: ${nick}`;
             await axios.post('https://api.telegram.org/bot6806809280:AAFqNvMpRw2ZsyyuFIpzoLd331rvHR1y4mQ/sendMessage', {
                 text,
                 chat_id: '-1002107069189',
