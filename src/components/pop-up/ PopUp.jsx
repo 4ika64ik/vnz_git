@@ -29,7 +29,7 @@ const Popup = () => {
 
                 </div>
                 <p>
-                    +49 152 10 22 5079
+                   +49 15510 379488
                 </p>
             </div>
             <TheForm onClick={closeNotification} >
