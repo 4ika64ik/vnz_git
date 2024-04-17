@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 import Form from "./Form";
 import axios from 'axios';
 import Footer from "components/Footer/index.jsx";
@@ -10,6 +10,11 @@ export default function FormPage() {
     const [phone, setPhone] = useState('');
     const [nick, setNick] = useState('');
 
+    useEffect(() => {
+       
+        ReactPixel.init('3309982329295012');
+    }, []);
+    
     const handleSubmit = async () => {
         setName('');
         setPhone('');
@@ -19,8 +24,12 @@ export default function FormPage() {
                 text,
                 chat_id: '-1002107069189',
             });
-            console.log(response.data);
-            ReactPixel.track('Lead');
+
+            
+           if (response.status === 200) {
+                console.log(response.data);
+                ReactPixel.track('Lead', { name, phone, nick }); // Передача данных в событие, если нужно
+            }
         } catch (error) {
             console.error(error);
         }
