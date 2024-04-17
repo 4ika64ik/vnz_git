@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import './formInput.css'
+import ReactPixel from 'react-facebook-pixel';
 
 import axios from 'axios';
 
