@@ -12,6 +12,12 @@ export default function TheForm({ children }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
+ useEffect(() => {
+       
+        ReactPixel.init('3309982329295012');
+    }, []);
+
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -21,6 +27,12 @@ export default function TheForm({ children }) {
                 chat_id: '-1002107069189',
             });
             setIsFormSubmitted(true);
+
+            
+        if (response.status === 200) {
+                ReactPixel.track('Lead', { name, phone }); // Отслеживаем событие Lead
+                setIsFormSubmitted(true);
+            }
         } catch (error) {
             console.error(error);
         }
